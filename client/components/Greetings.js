@@ -1,5 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
+var Alert = require('react-bootstrap/lib/Alert')
 
 import {getGreetings} from '../actions/greetings'
 
@@ -11,6 +12,7 @@ const Greetings = ({greetings, dispatch}) => (
   <div>
     <button onClick={() => dispatch(getGreetings())}>Show Greetings</button>
     {greetings.map(renderGreeting)}
+    <Alert>Alert!</Alert>
   </div>
 )
 
