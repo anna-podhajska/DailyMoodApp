@@ -6,7 +6,7 @@ import {getDailyMoods} from '../actions/dailymoods'
 
 
 const Dailymoods = ({dailymoods, dispatch}) => (
-  <div className="container">
+  <div className="container-fluid">
     <Alert>
       <Button
         onClick={(e)=> dispatch(getDailyMoods())}>
@@ -24,7 +24,7 @@ const Dailymoods = ({dailymoods, dispatch}) => (
                 <p>
                   <img src={mood.mood_icon}></img>
                   <h3>{mood.username}</h3>
-                  <h3>in {mood.location_name}</h3>
+                  <h4>in {mood.location_name}</h4>
                   {/* {mood.mood_type}, */}
                 </p>
               </div>

@@ -19896,11 +19896,16 @@ var _dailymoods = __webpack_require__(228);
 
 var _dailymoods2 = _interopRequireDefault(_dailymoods);
 
+var _savedailymood = __webpack_require__(496);
+
+var _savedailymood2 = _interopRequireDefault(_savedailymood);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = (0, _redux.combineReducers)({
   greetings: _greetings2.default,
-  dailymoods: _dailymoods2.default
+  dailymoods: _dailymoods2.default,
+  savedailymood: _savedailymood2.default
 });
 
 /***/ }),
@@ -20036,7 +20041,7 @@ var Dailymoods = function Dailymoods(_ref) {
       dispatch = _ref.dispatch;
   return _react2.default.createElement(
     'div',
-    { className: 'container' },
+    { className: 'container-fluid' },
     _react2.default.createElement(
       _reactBootstrap.Alert,
       null,
@@ -20077,7 +20082,7 @@ var Dailymoods = function Dailymoods(_ref) {
                   mood.username
                 ),
                 _react2.default.createElement(
-                  'h3',
+                  'h4',
                   null,
                   'in ',
                   mood.location_name
@@ -20210,16 +20215,13 @@ document.addEventListener('DOMContentLoaded', function () {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-
-function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
-
 function dailymoods() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
   var action = arguments[1];
 
   switch (action.type) {
     case 'RECEIVE_DAILYMOODS':
-      return [].concat(_toConsumableArray(action.dailymoods));
+      return action.dailymoods;
     default:
       return state;
   }
@@ -45532,6 +45534,30 @@ module.exports = function(module) {
 	return module;
 };
 
+
+/***/ }),
+/* 496 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+function savedailymood() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'NONE';
+  var action = arguments[1];
+
+  switch (action.type) {
+    case 'SAVE_DAILYMOOD':
+      return state;
+    default:
+      return state;
+  }
+}
+
+exports.default = savedailymood;
 
 /***/ })
 /******/ ]);
