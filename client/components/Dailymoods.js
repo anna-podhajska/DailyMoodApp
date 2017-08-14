@@ -16,17 +16,16 @@ const Dailymoods = ({dailymoods, dispatch}) => (
 
     <Grid>
       <Row className="show-grid">
-        {dailymoods.map((mood) => {
+        {dailymoods.map((mood, i) => {
           return (
-            <Col sm={6} md={3}>
+            <Col key={i} sm={6} md={3}>
               <div>
                 <h1>{mood.mood_name}</h1>
-                <p>
                   <img src={mood.mood_icon}></img>
                   <h3>{mood.username}</h3>
                   <h4>in {mood.location_name}</h4>
                   {/* {mood.mood_type}, */}
-                </p>
+
               </div>
           </Col>
           )

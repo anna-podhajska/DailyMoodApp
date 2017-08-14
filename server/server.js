@@ -3,9 +3,7 @@ var express = require('express')
 var bodyParser = require('body-parser')
 const cors = require('cors')
 
-
 var greetings = require('./routes/greeting')
-var dailymoods = require('./routes/dailymoods')
 
 const corsOptions = {
   origin: true,
@@ -20,8 +18,15 @@ server.use(cors(corsOptions))
 server.use(bodyParser.json())
 server.use(express.static(path.join(__dirname, '../public')))
 
-server.use('/api/greetings', greetings)
-server.use('/api/dailymoods', dailymoods)
 
+server.use('/api/greetings', greetings)
+server.use('/api/dailymoods', require('./routes/dailymoods'))
+server.use('/api/location', require('./routes/location'))
+
+server.get('/api/moods', (req, res) => {
+  let db = req.app.get('db')
+  db('moods')
+    .then(moods => res.json(moods))
+})
 
 module.exports = server

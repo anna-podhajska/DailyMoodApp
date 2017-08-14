@@ -4,5 +4,5 @@ const saveDailyMood = (db, newmood) => {
 }
 
 module.exports = {
-  saveDailyMood
+  saveDailyMood: (db, newMood) => db('dailymoods').insert(newMood)
 }

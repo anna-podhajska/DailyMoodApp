@@ -1,9 +1,9 @@
 import request from 'superagent'
 
-export const saveDailyMoodAction = (saveStatus) => {
+export const saveDailyMoodAction = (newMood) => {
   return {
     type: 'SAVE_DAILYMOOD',
-    saveDailyMoodStatus: saveStatus
+    newMood: newMood
   }
 }
 
@@ -15,11 +15,11 @@ export function saveDailyMood(newDailyMood) {
     .end((err,res) => {
       if(err) {
         console.log(err.message)
-        dispatch(saveDailyMoodAction('ERROR'))
-      }else{
-        dispatch(saveDailyMoodAction('SUCCESS'))
-      })
-    }
+        // dispatch(saveDailyMoodAction('ERROR'))
+      } else {
+        dispatch(saveDailyMoodAction(res.body))
+        // dispatch(saveDailyMoodAction('SUCCESS'))
+      }
+    })
   }
-
 }

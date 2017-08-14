@@ -1,5 +1,6 @@
 import request from 'superagent'
 
+//below are moods for users!
 export const receiveDailyMoodsAction = (dailymoods) => {
   return {
     type: 'RECEIVE_DAILYMOODS',

@@ -11,4 +11,12 @@ router.get('/', (req, res) => {
     })
 })
 
+router.post('/', (req, res) => {
+  let db = req.app.get('db')
+  dailymoodsDb.addNewMood(req.body, db)
+    .then(newMood => {
+      res.json(newMood)
+    })
+})
+
 module.exports = router
