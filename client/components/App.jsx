@@ -2,7 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 import Greetings from './Greetings'
 import Dailymoods from './Dailymoods'
-import SaveDailymood from './SaveDailymood'
+import SaveDailymood from '../containers/SaveDailymood'
 import {requestMoods} from '../actions/moodActions'
 import {getDailyMoods} from '../actions/dailymoods'
 import {requestLocations} from '../actions/locationActions'
@@ -24,7 +24,7 @@ class App extends React.Component {
       <SaveDailymood />
     </div>
   )}
-  
+
 }
 
 export default connect()(App)

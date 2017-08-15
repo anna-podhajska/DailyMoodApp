@@ -7,7 +7,7 @@ import {locations} from "../actions/locationActions"
 import {saveDailyMood} from "../actions/savedailymood"
 
 
-class SaveDailyMoods extends React.Component {
+export default class SaveDailyMoods extends React.Component {
   constructor(props) {
     super(props)
       this.state = {
@@ -32,7 +32,6 @@ class SaveDailyMoods extends React.Component {
     }
 
     render() {
-
       const renderMoodOption = (mood, i) =>
         <option key={i} value={mood.id}>{mood.mood_name}</option>
       const renderLocationOption = (location, i) =>
@@ -63,12 +62,3 @@ class SaveDailyMoods extends React.Component {
       )
     }
 }
-
-const mapStateToProps = ({moods, locations, users}) => {
-    // console.log({moods});
-    // console.log({locations});
-    // console.log({users});
-  return {moods, locations, users}
-}
-
-export default connect(mapStateToProps)(SaveDailyMoods)
