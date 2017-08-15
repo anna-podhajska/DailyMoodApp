@@ -4,7 +4,7 @@ import {Alert, DropdownButton, MenuItem, SplitButton} from 'react-bootstrap'
 
 import {dailymoods} from "../actions/dailymoods"
 import {locations} from "../actions/locationActions"
-import {saveDailyMoodAction} from "../actions/savedailymood"
+import {saveDailyMood} from "../actions/savedailymood"
 
 
 class SaveDailyMoods extends React.Component {
@@ -12,9 +12,9 @@ class SaveDailyMoods extends React.Component {
     super(props)
       this.state = {
         newMood: {
-          user_id: 0,
           mood_id: 0,
-          location_id: 0
+          location_id: 0,
+          user_id: 0,
         }
       }
     }
@@ -22,19 +22,19 @@ class SaveDailyMoods extends React.Component {
     submitDetails = (e) => {
       e.preventDefault()
       let {newMood} = this.state
-      this.props.dispatch(submitDetails(newMood))
+      this.props.dispatch(saveDailyMood(newMood))
     }
 
     updateDetails = (e) => {
       let {newMood} = this.state
-      newUser[e.target.name] = e.target.value
+      newMood[e.target.name] = e.target.value
       this.setState({newMood})
     }
 
     render() {
 
       const renderMoodOption = (mood, i) =>
-        <option key={i} value={mood.mood_id}>{mood.mood_name}</option>
+        <option key={i} value={mood.id}>{mood.mood_name}</option>
       const renderLocationOption = (location, i) =>
         <option key={i} value={location.id}>{location.location_name}</option>
       const renderUserOption = (user, i) =>
@@ -44,15 +44,15 @@ class SaveDailyMoods extends React.Component {
         <div>
           <Alert>
             <form onSubmit={this.submitDetails.bind(this)}>
-              <select>
+              <select name="user_id" onChange={this.updateDetails.bind(this)}>
                 <option> choose your name </option>
                 {this.props.users.map(renderUserOption)}
               </select>
-              <select>
+              <select name="mood_id" onChange={this.updateDetails.bind(this)}>
                 <option> choose your mood </option>
                 {this.props.moods.map(renderMoodOption)}
               </select>
-              <select>
+              <select name="location_id" onChange={this.updateDetails.bind(this)}>
                 <option> choose your location </option>
                 {this.props.locations.map(renderLocationOption)}
               </select>

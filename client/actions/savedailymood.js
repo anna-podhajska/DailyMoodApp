@@ -18,6 +18,7 @@ export function saveDailyMood(newDailyMood) {
         // dispatch(saveDailyMoodAction('ERROR'))
       } else {
         dispatch(saveDailyMoodAction(res.body))
+        console.log("success");
         // dispatch(saveDailyMoodAction('SUCCESS'))
       }
     })

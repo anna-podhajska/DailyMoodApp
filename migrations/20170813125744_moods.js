@@ -3,6 +3,7 @@ exports.up = function(knex, Promise) {
     table.increments('id')
     table.string('mood_name')
     table.string('mood_type')
+    table.string('mood_color')
     table.string('mood_icon')
   })
 };

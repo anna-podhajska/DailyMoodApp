@@ -1,4 +1,4 @@
-function savedailymood (state='NONE', action) {
+function savedailymood (state=[], action) {
   switch (action.type) {
     case 'SAVE_DAILYMOOD':
       return state
