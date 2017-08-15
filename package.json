@@ -9,6 +9,8 @@
     "start": "node server/index",
     "test": "ava  -v 'test/**/*.test.js'",
     "test:server": "ava  -v 'test/server/*.test.js'",
+    "test:client": "ava  -v 'test/client/*.test.js'",
+    "test:db": "ava  -v 'test/db/*.test.js'",
     "watch": "nodemon -e js,jsx -x npm test",
     "h:deploy": "git push heroku master",
     "h:migrate": "heroku run knex migrate:latest",
