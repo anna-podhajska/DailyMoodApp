@@ -16,12 +16,15 @@ class App extends React.Component {
     // this.props.dispatch(getDailyMoods())
   }
   render() {
-    return <div className='app-container'>
+    return (
+    <div className='app-container'>
       {/* <Greetings /> */}
+      <h1> Wellington mood map </h1>
       <Dailymoods />
       <SaveDailymood />
     </div>
-  }
+  )}
+  
 }
 
 export default connect()(App)

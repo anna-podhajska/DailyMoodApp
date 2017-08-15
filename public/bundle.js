@@ -20277,6 +20277,11 @@ var App = function (_React$Component) {
       return _react2.default.createElement(
         'div',
         { className: 'app-container' },
+        _react2.default.createElement(
+          'h1',
+          null,
+          ' Wellington mood map '
+        ),
         _react2.default.createElement(_Dailymoods2.default, null),
         _react2.default.createElement(_SaveDailymood2.default, null)
       );
@@ -20554,12 +20559,18 @@ var Dailymoods = function (_React$Component) {
             _reactBootstrap.Row,
             { className: 'show-grid' },
             this.props.dailymoods.map(function (mood, i) {
+              var divStyle = {
+                backgroundColor: mood.mood_color,
+                width: "120px",
+                height: "120px",
+                textAlign: "center"
+              };
               return _react2.default.createElement(
                 _reactBootstrap.Col,
-                { key: i, sm: 6, md: 4 },
+                { className: 'dailymoods-col', key: i, sm: 6, md: 4, lg: 6 },
                 _react2.default.createElement(
                   'div',
-                  null,
+                  { style: divStyle },
                   _react2.default.createElement(
                     'h3',
                     null,
@@ -20573,8 +20584,12 @@ var Dailymoods = function (_React$Component) {
                   _react2.default.createElement(
                     'h5',
                     null,
-                    'in ',
                     mood.location_name
+                  ),
+                  _react2.default.createElement(
+                    'h5',
+                    null,
+                    mood.created_at
                   )
                 )
               );
