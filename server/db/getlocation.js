@@ -1,8 +1,8 @@
-const getlocation = (db) => {
-  return db('location')
-    .select('location.*')
-}
+// const getlocation = (db) => {
+//   return db('locations')
+//     .select('locations.*')
+// }
 
 module.exports = {
-  getlocation: (db) => db('location').select('location/*')
+  getlocation: (db) => db('locations').select('locations.*')
 }

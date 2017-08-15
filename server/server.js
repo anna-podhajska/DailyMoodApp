@@ -21,7 +21,9 @@ server.use(express.static(path.join(__dirname, '../public')))
 
 server.use('/api/greetings', greetings)
 server.use('/api/dailymoods', require('./routes/dailymoods'))
+server.use('/api/savedailymoods', require('./routes/savedailymood'))
 server.use('/api/location', require('./routes/location'))
+server.use('/api/users', require('./routes/users'))
 
 server.get('/api/moods', (req, res) => {
   let db = req.app.get('db')
