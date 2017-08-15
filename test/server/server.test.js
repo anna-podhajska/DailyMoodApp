@@ -1,13 +1,13 @@
 var test = require('ava')
 var request = require('supertest')
 
-var createServer = require('../../server/server')
-var greetingsDb = require('../../server/db/greeting')
+var server = require('../../server/server')
+var usersDb = require('../../server/db/users')
 var setupDb = require('./setup-db')
 
-setupDb(test,createServer)
+setupDb(test,server)
 
-test.cb.only('GET /', t => {
+test.cb('GET /testing if get for users work', t => {
   request(t.context.app)
     .get('/api/users')
     .expect(200)
@@ -18,11 +18,11 @@ test.cb.only('GET /', t => {
     })
 })
 
-test.cb('read greetings db', t => {
-  greetingsDb.getGreetings(t.context.db)
-    .then(greetings => {
-      t.is(greetings.length, 3)
-      t.true(greetings[0].hasOwnProperty('text'))
+test.cb('read users db', t => {
+  usersDb.getUsers(t.context.db)
+    .then(users => {
+      t.is(users.length, 11)
+      // t.true(users[0].hasOwnProperty('text'))
       t.end()
     })
 })
