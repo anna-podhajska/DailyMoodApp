@@ -23,8 +23,8 @@ class App extends React.Component {
     <div className='app-container'>
       {/* <Greetings /> */}
       <h1> Wellington mood map </h1>
-      <Dailymoods />
       <SaveDailymoods />
+      <Dailymoods />
       <ShowUserMoods />
     </div>
   )}

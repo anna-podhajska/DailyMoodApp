@@ -24,7 +24,6 @@ export default class SaveDailyMoods extends React.Component {
       let {newMood} = this.state
       this.props.dispatch(saveDailyMood(newMood))
     }
-
     updateDetails = (e) => {
       let {newMood} = this.state
       newMood[e.target.name] = e.target.value
