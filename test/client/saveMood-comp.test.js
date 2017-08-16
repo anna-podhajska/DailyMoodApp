@@ -11,7 +11,7 @@ import store from '../../client/store'
 
 SaveDailymood.prototype.componentDidMount = () => {}
 
-test('Testing SaveDailymood Component', t => {
+test('bunch of tests for SaveDailymood Component', t => {
   let testUser = {id: 1, username: 'Harrison'}
   let testMood = {id: 2, mood_name: 'Hangry'}
   let testLocation = {id: 3, location_name: 'Wellington'}
@@ -36,9 +36,3 @@ test('Testing SaveDailymood Component', t => {
 
   // console.log(wrapper.find('select').nodes[2]);
 })
-
-//
-// test('testing how mount works', t => {
-//   const wrapper = mount(<Dailymoods />)
-//
-// })

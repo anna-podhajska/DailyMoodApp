@@ -10,21 +10,16 @@ import store from '../../client/store'
 Dailymoods.prototype.componentDidMount = () => {}
 
 test('shallow /testing Dailymoods component', t => {
-
   let testMood = {username: "Bob", mood_name: 'Happy', location_name: "Wellington", created_at: "12/10/2017", mood_color: "#133445" }
   const wrapper = shallow(<Dailymoods store={store}
     dailymoods={[testMood]} />)
-
   t.is(wrapper.find('h4').text(), testMood.mood_name)
-
 })
 
 test('shallow/ Dailymoods component', (t) => {
-
   let testMood = {username: "Bob", mood_name: 'Happy', location_name: "Wellington", created_at: "12/10/2017", mood_color: "#133445" }
   const wrapper = shallow(<Dailymoods store={store}
     dailymoods={[testMood]} />)
-
   const testClassInner = wrapper.find('.testClass');
   t.is(testClassInner.is('.testClass'), true);
 })
