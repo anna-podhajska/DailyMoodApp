@@ -35,7 +35,7 @@ class Dailymoods extends React.Component {
             onClick={this.toggleForm.bind(this)}>{this.state.showDailymoods ? 'show dailymoods' : 'hide dailymoods'}
           </Button>
         </Alert>
-        <Grid>
+
           <Row className="show-grid">
             {this.props.dailymoods.map((mood, i) => {
 
@@ -44,23 +44,28 @@ class Dailymoods extends React.Component {
                 width: "100px",
                 height: "100px",
                 textAlign: "center",
-                borderRadius: "10"
+                // borderRadius: "50",
+                marigin: "0",
+                padding: '0'
               }
+
               return (
                 <Col className="dailymoods-col" key={i} sm={6} md={4} lg={6}>
                   <div style={divStyle} className="divStyle">
-                    <h4>{mood.mood_name}</h4>
                     {/* <img src={mood.mood_icon}></img> */}
                     <h5>{mood.username}</h5>
-                    <h6>{mood.location_name}</h6>
-                    <h6>{mood.created_at}</h6>
+                    <h4>{mood.mood_name}</h4>
+                    <h6>
+                      {mood.location_name} <br />
+                      {mood.created_at}
+                    </h6>
                     {/* {mood.mood_type}, */}
                   </div>
                 </Col>
               )
             })}
           </Row>
-        </Grid>
+
       </div>
     )
   }

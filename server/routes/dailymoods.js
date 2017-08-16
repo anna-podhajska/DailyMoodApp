@@ -3,6 +3,14 @@ var router = express.Router()
 
 var dailymoodsDb = require('../db/dailymoods')
 
+router.get('/:id', (req, res) => {
+  let db = req.app.get('db')
+  dailymoodsDb.getDailyMoodById(req.params.id, db)
+  .then(moodById => {
+    res.json(moodById)
+  })
+})
+
 router.get('/', (req, res) => {
   let db = req.app.get('db')
   dailymoodsDb.getDailyMoods(db)
@@ -18,5 +26,6 @@ router.post('/', (req, res) => {
       res.json(newMood)
     })
 })
+
 
 module.exports = router

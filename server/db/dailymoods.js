@@ -13,10 +13,11 @@ const getDailyMoodById = (id, db) => {
     .join('locations', 'location_id', '=', 'locations.id')
     .select('username', 'mood_name', 'mood_type', 'mood_icon', 'location_name', 'mood_color', 'created_at')
     .where('dailymoods.id', id)
-    .first()
+    // .first()
 }
 
 module.exports = {
   getDailyMoods,
-  addNewMood: (mood, db) => db('dailyMoods').insert(mood).then(mood_id => getDailyMoodById(mood_id[0], db) ),
+  getDailyMoodById,
+  addNewMood: (mood, db) => db('dailymoods').insert(mood).then(mood_id => getDailyMoodById(mood_id[0], db) ),
 }
