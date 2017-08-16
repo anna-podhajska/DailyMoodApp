@@ -41,19 +41,19 @@ class Dailymoods extends React.Component {
 
               let divStyle = {
                 backgroundColor: mood.mood_color,
-                width: "120px",
-                height: "120px",
+                width: "100px",
+                height: "100px",
                 textAlign: "center",
                 borderRadius: "10"
               }
               return (
                 <Col className="dailymoods-col" key={i} sm={6} md={4} lg={6}>
                   <div style={divStyle} className="divStyle">
-                    <h3>mood name: {mood.mood_name}</h3>
+                    <h4>{mood.mood_name}</h4>
                     {/* <img src={mood.mood_icon}></img> */}
-                    <h4>{mood.username}</h4>
-                    <h5>{mood.location_name}</h5>
-                    <h5>{mood.created_at}</h5>
+                    <h5>{mood.username}</h5>
+                    <h6>{mood.location_name}</h6>
+                    <h6>{mood.created_at}</h6>
                     {/* {mood.mood_type}, */}
                   </div>
                 </Col>
