@@ -2,7 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 
 import Greetings from './Greetings'
-import Dailymoods from './Dailymoods'
+import Dailymoods from '../containers/Dailymoods'
 import SaveDailymood from '../containers/SaveDailymood'
 
 import {requestMoods} from '../actions/moodActions'
