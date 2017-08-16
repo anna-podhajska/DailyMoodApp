@@ -28,7 +28,7 @@ class Dailymoods extends React.Component {
 
   render(){
     return (
-      <div>
+      <div className="testClass">
         <Alert>
           <Button name="showDailymoods" bsStyle="warning"
             // onClick={(e)=> this.props.dispatch(getDailyMoods())}>
