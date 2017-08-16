@@ -6,4 +6,4 @@ const mapStateToProps = (state) => {
   return {dailymoods: state.dailymoods }
 }
 
-export default connect (mapStateToProps) (Dailymoods)
+export default connect (mapStateToProps) (DailyMoods)

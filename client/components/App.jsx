@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 
 import Greetings from './Greetings'
 import Dailymoods from '../containers/Dailymoods'
-import SaveDailymood from '../containers/SaveDailymood'
+import SaveDailymoods from '../containers/SaveDailymoods'
 
 import {requestMoods} from '../actions/moodActions'
 import {requestLocations} from '../actions/locationActions'
@@ -23,7 +23,7 @@ class App extends React.Component {
       {/* <Greetings /> */}
       <h1> Wellington mood map </h1>
       <Dailymoods />
-      <SaveDailymood />
+      <SaveDailymoods />
     </div>
   )}
 
