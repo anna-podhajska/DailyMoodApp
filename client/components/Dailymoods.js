@@ -17,6 +17,7 @@ class Dailymoods extends React.Component {
   render(){
     return (
       <div className="testClass">
+        <Grid>
         <Row className="show-grid">
           {this.props.dailymoods.map((mood, i) => {
             let divStyle = {
@@ -24,7 +25,7 @@ class Dailymoods extends React.Component {
               width: "100px",
               height: "100px",
               textAlign: "center",
-              // borderRadius: "50",
+              borderRadius: "5",
               marigin: "0",
               padding: '0'
             }
@@ -34,9 +35,9 @@ class Dailymoods extends React.Component {
                   {/* <img src={mood.mood_icon}></img> */}
                   <h5>{mood.username}</h5>
                   <h4>{mood.mood_name}</h4>
-                  <h6>
+                  <h6 className="date-location">
                     {mood.location_name} <br />
-                    {mood.created_at}
+                    <span className="date">{mood.created_at}</span>
                   </h6>
                   {/* {mood.mood_type}, */}
                 </div>
@@ -44,6 +45,7 @@ class Dailymoods extends React.Component {
             )
           })}
         </Row>
+      </Grid>
 
       </div>
     )
