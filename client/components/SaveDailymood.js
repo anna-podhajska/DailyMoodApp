@@ -2,6 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {Alert, DropdownButton, MenuItem, SplitButton} from 'react-bootstrap'
 
+import {getMoods_forUser} from "../actions/moods_forUser"
 import {dailymoods} from "../actions/dailymoods"
 import {locations} from "../actions/locationActions"
 import {saveDailyMood} from "../actions/savedailymood"
@@ -29,6 +30,10 @@ export default class SaveDailyMoods extends React.Component {
       newMood[e.target.name] = e.target.value
       this.setState({newMood})
     }
+    updateDetailsForUser = (e) =>{
+      this.updateDetails(e)
+      this.props.dispatch(getMoods_forUser(e.target.value))
+    }
 
     render() {
       const renderMoodOption = (mood, i) =>
@@ -42,7 +47,7 @@ export default class SaveDailyMoods extends React.Component {
         <div>
           <Alert>
             <form onSubmit={this.submitDetails.bind(this)}>
-              <select name="user_id" onChange={this.updateDetails.bind(this)}>
+              <select name="user_id" onChange={this.updateDetailsForUser.bind(this)}>
                 <option> choose your name </option>
                 {this.props.users.map(renderUserOption)}
               </select>

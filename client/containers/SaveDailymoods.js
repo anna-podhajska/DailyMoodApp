@@ -2,7 +2,6 @@ import {connect} from 'react-redux'
 import SaveDailyMood from '../components/SaveDailymood'
 
 const mapStateToProps = ({moods, locations, users}) => {
-    // console.log({moods});
   return {moods, locations, users}
 }
 

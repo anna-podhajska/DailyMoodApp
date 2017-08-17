@@ -1,15 +1,20 @@
 import React from 'react'
+import {connect} from 'react-redux'
 
+import {receiveUsersAction} from '../actions/usersAction'
+import Dailymoods from './Dailymoods'
 
 class ShowUserMoods extends React.Component {
   constructor(props) {
     super(props)
-      this.state = {}
+      // this.state = {}
   }
 
-  render() {
+  render(){
     return (
-      <h6>hello, i am a new component</h6>
+      <div>
+      <Dailymoods dailymoods={this.props.usermoods} />
+      </div>
     )
   }
 

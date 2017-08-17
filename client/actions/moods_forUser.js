@@ -8,15 +8,15 @@ export const receiveMoodsUserAction = (moods_forUser) => {
   }
 }
 
-export function getMoods_forUser() {
+export function getMoods_forUser(userId) {
   return (dispatch) => {
     request
-    .get('/api/dailymoods/:id')
-    .end((err,res)=> {
+    .get('/api/dailymoods/' + userId)
+    .end((err,res) => {
       if (err) {
         console.log(err.message)
       } else {
-        dispatch(receiveMoodsUserAction(res.body, req.params.id))
+        dispatch(receiveMoodsUserAction(res.body))
       }
     })
   }

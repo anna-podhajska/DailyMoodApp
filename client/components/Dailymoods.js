@@ -16,7 +16,6 @@ class Dailymoods extends React.Component {
   componentWillMount() {
     // this.props.dispatch(getDailyMoods())
   }
-
   toggleForm(e) {
     if (this.state.showDailymoods === true) {
       this.props.dispatch(getDailyMoods())
@@ -25,7 +24,6 @@ class Dailymoods extends React.Component {
     }
     this.setState({showDailymoods: !this.state.showDailymoods})
   }
-
   render(){
     return (
       <div className="testClass">
