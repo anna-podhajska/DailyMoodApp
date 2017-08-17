@@ -9,7 +9,7 @@ class ShowUserMoods extends React.Component {
 
   render() {
     return (
-      <div> hello, i am a new component</div>
+      <h6>hello, i am a new component</h6>
     )
   }
 

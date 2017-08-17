@@ -14,7 +14,7 @@ class Dailymoods extends React.Component {
   }
 
   componentWillMount() {
-    this.props.dispatch(getDailyMoods())
+    // this.props.dispatch(getDailyMoods())
   }
 
   toggleForm(e) {
