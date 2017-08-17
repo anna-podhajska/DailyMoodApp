@@ -5,3 +5,12 @@
 /*.divStyle {
   border-radius: 50%;
 }*/
+
+.app-container h1 {
+padding-left: 2em;
+}
+
+.alert {
+  /*background-color: lightgray;*/
+  margin-top: 1em;
+}

@@ -1,8 +1,8 @@
 import {connect} from 'react-redux'
-import DailyMoods from '../components/DailyMoods'
+import Dailymoods from '../components/Dailymoods'
 
 const mapStateToProps = (state) => {
   return {dailymoods: state.dailymoods }
 }
 
-export default connect (mapStateToProps) (DailyMoods)
+export default connect (mapStateToProps) (Dailymoods)

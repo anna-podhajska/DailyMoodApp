@@ -12,9 +12,6 @@ class ButtonDailymoods extends React.Component {
       showDailymoods: true
     }
   }
-  componentWillMount() {
-    // this.props.dispatch(getDailyMoods())
-  }
   toggleForm(e) {
     if (this.state.showDailymoods === true) {
       this.props.dispatch(getDailyMoods())
@@ -27,9 +24,9 @@ class ButtonDailymoods extends React.Component {
     return (
       <div className="testClass">
         <Alert>
-          <Button name="showDailymoods" bsStyle="warning"
+          <Button name="showDailymoods" bsStyle="info"
             // onClick={(e)=> this.props.dispatch(getDailyMoods())}>
-            onClick={this.toggleForm.bind(this)}>{this.state.showDailymoods ? 'show dailymoods' : 'hide dailymoods'}
+            onClick={this.toggleForm.bind(this)}>{this.state.showDailymoods ? 'show all dailymoods' : 'hide dailymoods'}
           </Button>
         </Alert>
       </div>

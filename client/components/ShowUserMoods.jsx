@@ -7,7 +7,6 @@ import Dailymoods from './Dailymoods'
 class ShowUserMoods extends React.Component {
   constructor(props) {
     super(props)
-      // this.state = {}
   }
 
   render(){

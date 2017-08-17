@@ -12,6 +12,7 @@ import {requestUsers} from '../actions/usersAction'
 import {getDailyMoods} from '../actions/dailymoods'
 import {receiveMoodsUserAction} from '../actions/moods_forUser'
 
+
 class App extends React.Component {
   componentWillMount() {
     this.props.dispatch(requestMoods())
@@ -24,10 +25,10 @@ class App extends React.Component {
     return (
     <div className='app-container'>
       <h1> Wellington mood map </h1>
-      <ButtonDailymoods />
       <SaveDailymoods />
-      <Dailymoods />
       <ShowUserMoods />
+      <ButtonDailymoods />
+      <Dailymoods />
     </div>
   )}
 

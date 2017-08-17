@@ -2,9 +2,6 @@ import React from 'react'
 import {connect} from 'react-redux'
 import { Button, Alert, Grid, Row, Col } from 'react-bootstrap'
 import {getDailyMoods, receiveDailyMoodsAction} from '../actions/dailymoods'
-// import {getDailyMoods} from "../actions/dailymood"
-import ButtonDailymoods from './ButtonDailymoods'
-
 
 class Dailymoods extends React.Component {
   constructor(props) {
