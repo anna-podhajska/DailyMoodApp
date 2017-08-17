@@ -1,9 +1,10 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import { Button, Alert, Grid, Row, Col } from 'react-bootstrap'
-
 import {getDailyMoods, receiveDailyMoodsAction} from '../actions/dailymoods'
 // import {getDailyMoods} from "../actions/dailymood"
+import ButtonDailymoods from './ButtonDailymoods'
+
 
 class Dailymoods extends React.Component {
   constructor(props) {
@@ -16,24 +17,9 @@ class Dailymoods extends React.Component {
   componentWillMount() {
     // this.props.dispatch(getDailyMoods())
   }
-  toggleForm(e) {
-    if (this.state.showDailymoods === true) {
-      this.props.dispatch(getDailyMoods())
-    } else {
-      this.props.dispatch(receiveDailyMoodsAction([]))
-    }
-    this.setState({showDailymoods: !this.state.showDailymoods})
-  }
   render(){
     return (
       <div className="testClass">
-        <Alert>
-          <Button name="showDailymoods" bsStyle="warning"
-            // onClick={(e)=> this.props.dispatch(getDailyMoods())}>
-            onClick={this.toggleForm.bind(this)}>{this.state.showDailymoods ? 'show dailymoods' : 'hide dailymoods'}
-          </Button>
-        </Alert>
-
         <Row className="show-grid">
           {this.props.dailymoods.map((mood, i) => {
             let divStyle = {

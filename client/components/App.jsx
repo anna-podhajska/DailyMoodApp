@@ -4,6 +4,7 @@ import {connect} from 'react-redux'
 import Dailymoods from '../containers/Dailymoods'
 import SaveDailymoods from '../containers/SaveDailymoods'
 import ShowUserMoods from '../containers/ShowUserMoods'
+import ButtonDailymoods from '../containers/ButtonDailymoods'
 
 import {requestMoods} from '../actions/moodActions'
 import {requestLocations} from '../actions/locationActions'
@@ -23,6 +24,7 @@ class App extends React.Component {
     return (
     <div className='app-container'>
       <h1> Wellington mood map </h1>
+      <ButtonDailymoods />
       <SaveDailymoods />
       <Dailymoods />
       <ShowUserMoods />
