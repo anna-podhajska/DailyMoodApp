@@ -3,9 +3,9 @@ import test from 'ava'
 import { shallow, mount, render } from 'enzyme'
 import {Provider} from 'react-redux'
 
-import ShowUserMoods from '../../client/components/showUserMoods'
-import './setup-dom'
-import store from '../../client/store'
+import ShowUserMoods from '../../../client/components/showUserMoods'
+import '../setup-dom'
+import store from '../../../client/store'
 
 ShowUserMoods.prototype.componentDidMount = () => {}
 

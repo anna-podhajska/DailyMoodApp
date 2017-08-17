@@ -18,3 +18,25 @@ test.cb('GET /testing if get for users work', t => {
       t.end()
     })
 })
+
+test.cb('GET /testing if users/5 route returns Magda name', t => {
+  request(t.context.app)
+    .get('/api/dailymoods/5')
+    .expect(200)
+    .end((err,res) => {
+      if(err) console.log(err)
+      t.is(res.body[0].username, "Magda")
+      t.end()
+    })
+})
+
+test.cb('GET /testing if users/5 route returns Ela name', t => {
+  request(t.context.app)
+    .get('/api/dailymoods/4')
+    .expect(200)
+    .end((err,res) => {
+      if(err) console.log(err)
+      t.is(res.body[0].username, "Ela")
+      t.end()
+    })
+})

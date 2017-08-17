@@ -4,9 +4,9 @@ import { shallow, mount, render } from 'enzyme'
 
 import {Provider} from 'react-redux'
 
-import SaveDailymood from '../../client/components/SaveDailymood'
-import './setup-dom'
-import store from '../../client/store'
+import SaveDailymood from '../../../client/components/SaveDailymood'
+import '../setup-dom'
+import store from '../../../client/store'
 
 
 SaveDailymood.prototype.componentDidMount = () => {}
