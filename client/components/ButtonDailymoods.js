@@ -22,13 +22,13 @@ class ButtonDailymoods extends React.Component {
   }
   render(){
     return (
-      <div className="testClass">
-        <Alert>
+      <div className="testClass dailymoods-button">
+        {/* <Alert> */}
           <Button name="showDailymoods" bsStyle="info"
             // onClick={(e)=> this.props.dispatch(getDailyMoods())}>
             onClick={this.toggleForm.bind(this)}>{this.state.showDailymoods ? 'show all dailymoods' : 'hide dailymoods'}
           </Button>
-        </Alert>
+        {/* </Alert> */}
       </div>
     )
   }

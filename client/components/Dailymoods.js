@@ -16,7 +16,7 @@ class Dailymoods extends React.Component {
   }
   render(){
     return (
-      <div className="testClass">
+      <div className="dailymoods-container">
         <Grid>
         <Row className="show-grid">
           {this.props.dailymoods.map((mood, i) => {

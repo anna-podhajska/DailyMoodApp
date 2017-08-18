@@ -1,5 +1,5 @@
 import React from 'react'
-import {connect} from 'react-redux'
+// import {connect} from 'react-redux'
 import {Alert, DropdownButton, MenuItem, SplitButton} from 'react-bootstrap'
 
 import {getMoods_forUser} from "../actions/moods_forUser"

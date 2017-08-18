@@ -18,7 +18,8 @@ test('bunch of tests for SaveDailymood Component', t => {
   let testMood = {id: 2, mood_name: 'Hangry'}
   let testLocation = {id: 3, location_name: 'Wellington'}
 
-  const wrapper = shallow(<SaveDailyMoods store={store} users={[testUser]} moods={[testMood]} locations={[testLocation]}/>)
+  const wrapper = shallow(<SaveDailyMoods store={store} users={[testUser]} moods={[testMood]} locations={[testLocation]} />)
+
   t.is(wrapper.find('form').length, 1)
   t.is(wrapper.find('select').length, 3)
 

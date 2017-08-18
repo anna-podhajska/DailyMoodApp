@@ -9,14 +9,14 @@ import store from '../../../client/store'
 
 Dailymoods.prototype.componentDidMount = () => {}
 
-test('shallow /testing Dailymoods component', t => {
+test('checking if Dailymoods has h4 with mood_name', t => {
   let testMood = {username: "Bob", mood_name: 'Happy', location_name: "Wellington", created_at: "12/10/2017", mood_color: "#133445" }
   const wrapper = shallow(<Dailymoods store={store}
     dailymoods={[testMood]} />)
   t.is(wrapper.find('h4').text(), testMood.mood_name)
 })
 
-test('shallow/ Dailymoods component', (t) => {
+test('checking if Dailymoods has testClass', (t) => {
   let testMood = {username: "Bob", mood_name: 'Happy', location_name: "Wellington", created_at: "12/10/2017", mood_color: "#133445" }
   const wrapper = shallow(<Dailymoods store={store}
     dailymoods={[testMood]} />)
