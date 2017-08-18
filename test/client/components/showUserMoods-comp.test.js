@@ -12,8 +12,7 @@ ShowUserMoods.prototype.componentDidMount = () => {}
 test('shallow /testing ShowUserMoods component', t => {
 
   const wrapper = shallow(<ShowUserMoods store={store} />)
-  t.is(wrapper.find('h6').text(), "hello, i am a new component")
-
+  t.is(wrapper.find('div').length, 1)
 })
 
 

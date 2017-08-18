@@ -11,7 +11,7 @@ class ShowUserMoods extends React.Component {
 
   render(){
     return (
-      <div>
+      <div className="showUserMoods">
       <Dailymoods dailymoods={this.props.usermoods} />
       </div>
     )
