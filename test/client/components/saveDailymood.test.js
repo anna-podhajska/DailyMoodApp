@@ -13,17 +13,20 @@ import SaveDailyMoods from '../../../client/containers/SaveDailymoods'
 
 SaveDailyMoods.prototype.componentDidMount = () => {}
 
-test('bunch of tests for SaveDailymood Component', t => {
+test.only('bunch of tests for SaveDailymood Component', t => {
   let testUser = {id: 1, username: 'Harrison'}
   let testMood = {id: 2, mood_name: 'Hangry'}
   let testLocation = {id: 3, location_name: 'Wellington'}
 
-  const wrapper = shallow(<SaveDailyMoods store={store} users={[testUser]} moods={[testMood]} locations={[testLocation]} />)
+  store.dispatch({type: 'RECEIVE_USERS', users: [testUser]})
 
+  const wrapper = mount(<SaveDailyMoods store={store} moods={[testMood]} locations={[testLocation]} />)
+  console.log(wrapper.html())
   t.is(wrapper.find('form').length, 1)
   t.is(wrapper.find('select').length, 3)
 
-  let firstUser = wrapper.find('select').nodes[0].props.children[1][0].props
+  console.log(wrapper.find('select').nodes)
+  let firstUser = wrapper.find('select').nodes[0].props.children.nodes[1][0].props
   t.is(firstUser.value, testUser.id)
   t.is(firstUser.children, testUser.username)
 

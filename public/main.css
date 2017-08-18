@@ -9,7 +9,7 @@
 }*/
 
 .app-container h1 {
-padding-left: 2em;
+margin-left: 50px;
 }
 
 .alert {
@@ -23,6 +23,18 @@ padding-left: 2em;
   padding-top: 1em;
 }
 
-.dailymoods-button {
+.showUserMoods {
   background-color: lightgray;
+}
+
+.saveDailymoodsForm {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding-left: 50px;
+  background-color: lightgray;
+
+}
+.dailymoods-button {
+  margin-top: 15px;
+  margin-left: 50px;
 }

@@ -1,5 +1,4 @@
 import React from 'react'
-// import {connect} from 'react-redux'
 import {Alert, DropdownButton, MenuItem, SplitButton} from 'react-bootstrap'
 
 import {getMoods_forUser} from "../actions/moods_forUser"
@@ -43,9 +42,11 @@ export default class SaveDailyMoods extends React.Component {
       const renderUserOption = (user, i) =>
         <option key={i} value={user.id}>{user.username}</option>
 
+        console.log(Object.keys(this.props))
+        console.log(this.props.users)
       return (
-        <div>
-          <Alert>
+        <div className="saveDailymoodsForm">
+          {/* <Alert> */}
             <form onSubmit={this.submitDetails.bind(this)}>
               <select name="user_id" onChange={this.updateDetailsForUser.bind(this)}>
                 <option> choose your name </option>
@@ -61,7 +62,7 @@ export default class SaveDailyMoods extends React.Component {
               </select>
               <input type="submit" value="submit"/>
             </form>
-          </Alert>
+          {/* </Alert> */}
         </div>
       )
     }
