@@ -13,7 +13,7 @@ import SaveDailyMoods from '../../../client/containers/SaveDailymoods'
 
 SaveDailyMoods.prototype.componentDidMount = () => {}
 
-test.only('bunch of tests for SaveDailymood Component', t => {
+test('bunch of tests for SaveDailymood Component', t => {
   let testUser = {id: 1, username: 'Harrison'}
   let testMood = {id: 2, mood_name: 'Hangry'}
   let testLocation = {id: 3, location_name: 'Wellington'}
