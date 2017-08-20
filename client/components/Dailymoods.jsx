@@ -2,6 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 import { Button, Alert, Grid, Row, Col } from 'react-bootstrap'
 import {getDailyMoods, receiveDailyMoodsAction} from '../actions/dailymoods'
+import jump from 'jump.js'
 
 class Dailymoods extends React.Component {
   constructor(props) {
@@ -32,21 +33,18 @@ class Dailymoods extends React.Component {
             return (
               <Col className="dailymoods-col" key={i} sm={6} md={4} lg={6}>
                 <div style={divStyle} className="divStyle">
-                  {/* <img src={mood.mood_icon}></img> */}
                   <h5>{mood.username}</h5>
                   <h4>{mood.mood_name}</h4>
                   <h6 className="date-location">
                     {mood.location_name} <br />
                     <span className="date">{mood.created_at}</span>
                   </h6>
-                  {/* {mood.mood_type}, */}
                 </div>
               </Col>
             )
           })}
         </Row>
       </Grid>
-
       </div>
     )
   }

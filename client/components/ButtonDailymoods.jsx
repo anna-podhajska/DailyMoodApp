@@ -1,15 +1,16 @@
 import React from 'react'
-import {connect} from 'react-redux'
+// import {connect} from 'react-redux'
 import { Button, Alert, Grid, Row, Col } from 'react-bootstrap'
 import {getDailyMoods, receiveDailyMoodsAction} from '../actions/dailymoods'
 import Dailymoods from './Dailymoods'
-
+// import jump from 'jump.js'
 
 class ButtonDailymoods extends React.Component {
   constructor(props) {
     super(props)
     this.state= {
-      showDailymoods: true
+      showDailymoods: true,
+      // performJump: false
     }
   }
   toggleForm(e) {
@@ -23,12 +24,10 @@ class ButtonDailymoods extends React.Component {
   render(){
     return (
       <div className="testClass dailymoods-button">
-        {/* <Alert> */}
           <Button name="showDailymoods" bsStyle="info"
             // onClick={(e)=> this.props.dispatch(getDailyMoods())}>
             onClick={this.toggleForm.bind(this)}>{this.state.showDailymoods ? 'show all dailymoods' : 'hide dailymoods'}
           </Button>
-        {/* </Alert> */}
       </div>
     )
   }

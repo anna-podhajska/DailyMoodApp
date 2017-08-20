@@ -29,9 +29,12 @@ class App extends React.Component {
       <ShowUserMoods />
       <ButtonDailymoods />
       <Dailymoods />
+      {/* <div className="testJump"></div> */}
     </div>
   )}
 
 }
+
+
 
 export default connect()(App)

@@ -12,4 +12,16 @@ router.get("/", (req,res) => {
     res.json(users)
   })
 })
+
+
+router.delete("/:userId", (req,res) => {
+  let db = req.app.get('db')
+  let deletedUserId = req.params.userId
+
+  usersDb.deleteUsers(deletedUserId, db)
+  .then(deletedUserId => {
+    res.json({user_id: deletedUserId})
+  })
+})
+
 module.exports = router
