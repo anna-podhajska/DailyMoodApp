@@ -1,4 +1,5 @@
 import React from 'react'
+import {HashRouter as Router, Route} from 'react-router-dom'
 import {connect} from 'react-redux'
 
 import Dailymoods from '../containers/Dailymoods'
@@ -19,21 +20,22 @@ class App extends React.Component {
     this.props.dispatch(requestLocations())
     this.props.dispatch(requestUsers())
     this.props.dispatch(receiveMoodsUserAction([]))
-    // this.props.dispatch(getDailyMoods())
   }
   render() {
     return (
-    <div className='app-container'>
-      <h1> Wellington mood map </h1>
-      <SaveDailymoods />
-      <ShowUserMoods />
-      <ButtonDailymoods />
-      <Dailymoods />
-      {/* <div className="testJump"></div> */}
-    </div>
+      <Router>
+        <div className='app-container'>
+          <h1> Wellington mood map </h1>
+          <Route exact path="/" component={SaveDailymoods} />
+          <ShowUserMoods />
+          <ButtonDailymoods />
+          <Dailymoods />
+        </div>
+      </Router>
   )}
 
 }
+<Route exact path="/" render={() => <Greetings person={this.state.person}/>} />
 
 
 

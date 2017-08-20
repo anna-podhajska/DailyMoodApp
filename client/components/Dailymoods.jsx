@@ -1,7 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import { Button, Alert, Grid, Row, Col } from 'react-bootstrap'
-import {getDailyMoods, receiveDailyMoodsAction} from '../actions/dailymoods'
 import jump from 'jump.js'
 
 class Dailymoods extends React.Component {
@@ -11,7 +10,6 @@ class Dailymoods extends React.Component {
       showDailymoods: true
     }
   }
-
   componentWillMount() {
     // this.props.dispatch(getDailyMoods())
   }

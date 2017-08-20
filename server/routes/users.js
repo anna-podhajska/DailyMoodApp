@@ -17,11 +17,13 @@ router.get("/", (req,res) => {
 router.delete("/:userId", (req,res) => {
   let db = req.app.get('db')
   let deletedUserId = req.params.userId
-
-  usersDb.deleteUsers(deletedUserId, db)
-  .then(deletedUserId => {
-    res.json({user_id: deletedUserId})
-  })
+  usersDb.deletemoodsForUser(deletedUserId, db)
+  .then(
+    () =>
+      usersDb.deleteUser(deletedUserId, db)
+      .then(() => {
+        res.json({user_id: deletedUserId})
+      }))
 })
 
 module.exports = router

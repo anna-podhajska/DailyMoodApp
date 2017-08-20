@@ -42,8 +42,6 @@ export default class SaveDailyMoods extends React.Component {
       const renderUserOption = (user, i) =>
         <option key={i} value={user.id}>{user.username}</option>
 
-        console.log(Object.keys(this.props))
-        console.log(this.props.users)
       return (
         <div className="saveDailymoodsForm">
           {/* <Alert> */}
