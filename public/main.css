@@ -1,3 +1,7 @@
+.table {
+  width: 50%;
+}
+
 .dailymoods-col {
   width: 105px;
   margin: 0;
@@ -34,7 +38,8 @@ margin-left: 50px;
   background-color: lightgray;
 
 }
-.dailymoods-button {
+.dailymoods-button,
+.deleteuser-button {
   margin-top: 15px;
   margin-left: 50px;
 }

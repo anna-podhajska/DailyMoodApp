@@ -3,7 +3,6 @@ import React from 'react'
 import { Button, Alert, Grid, Row, Col } from 'react-bootstrap'
 import {getDailyMoods, receiveDailyMoodsAction} from '../actions/dailymoods'
 import Dailymoods from './Dailymoods'
-// import jump from 'jump.js'
 
 class ButtonDailymoods extends React.Component {
   constructor(props) {

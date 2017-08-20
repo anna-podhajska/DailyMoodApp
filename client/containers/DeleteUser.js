@@ -1,7 +1,7 @@
 import {connect} from 'react-redux'
 import DeleteUser from '../components/DeleteUser'
 
-const mapStateToProps (state) => {
+const mapStateToProps = (state) => {
   return {users: state.users}
 }
 

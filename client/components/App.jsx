@@ -6,6 +6,8 @@ import Dailymoods from '../containers/Dailymoods'
 import SaveDailymoods from '../containers/SaveDailymoods'
 import ShowUserMoods from '../containers/ShowUserMoods'
 import ButtonDailymoods from '../containers/ButtonDailymoods'
+import ButtonDeleteUser from '../components/ButtonDeleteUser'
+import DeleteUser from '../containers/DeleteUser'
 
 import {requestMoods} from '../actions/moodActions'
 import {requestLocations} from '../actions/locationActions'
@@ -27,9 +29,11 @@ class App extends React.Component {
         <div className='app-container'>
           <h1> Wellington mood map </h1>
           <Route exact path="/" component={SaveDailymoods} />
-          <ShowUserMoods />
-          <ButtonDailymoods />
-          <Dailymoods />
+          <Route exact path="/" component={ShowUserMoods} />
+          <Route exact path="/" component={ButtonDeleteUser} />
+          <Route exact path="/" component={ButtonDailymoods} />
+          <Route exact path="/" component={Dailymoods} />
+          <Route path="/users" component={DeleteUser} />
         </div>
       </Router>
   )}

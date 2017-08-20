@@ -23,13 +23,13 @@ export const requestUsers = () => {
 export const deleteUserAction = (deletedUserId) => {
   return {
     type: 'DELETE_USER',
-    deletedUserId: deletedUserId //tu bedzie tylko cyfra - id usunietego uz
+    deletedUserId: deletedUserId
   }
 }
 export const requestDeleteUser = (userId) => {
   return (dispatch) => {
     request
-      .get('/api/users/'+ userId)
+      .delete('/api/users/'+ userId)
       .end ((err,res) => {
         if (err) {
           console.log(err)

@@ -4,7 +4,7 @@ import dailymoods from './dailymoods'
 import savedailymood from './savedailymood'
 import moods from './moods'
 import locations from './locations'
-import users from './users'
+import {usersReducer, deleteUserReducer} from './users'
 import moods_forUser from './moods_forUser'
 
 export default combineReducers({
@@ -12,6 +12,7 @@ export default combineReducers({
   savedailymood,
   moods,
   locations,
-  users,
-  moods_forUser
+  users: usersReducer,
+  moods_forUser,
+  // deletedUserId: deleteUserReducer
 })

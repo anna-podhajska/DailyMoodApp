@@ -1,8 +1,6 @@
 import React from 'react'
 import { Button, Alert, Grid, Row, Col } from 'react-bootstrap'
-import Link from 'react'
-import {getDailyMoods, receiveDailyMoodsAction} from '../actions/dailymoods'
-import Dailymoods from './Dailymoods'
+import {Link} from 'react-router-dom'
 
 class ButtonDeleteUser extends React.Component {
   constructor(props) {
@@ -12,11 +10,11 @@ class ButtonDeleteUser extends React.Component {
   render(){
     return (
       <div className="deleteuser-container">
-          <Button name="deleteuser-button" bsStyle="warning"
-            <Link to=""></Link>
+          <Button className="deleteuser-button" bsStyle="warning">
+            <Link to="/users">delete/manage users</Link>
           </Button>
       </div>
     )
   }
 }
-export default ButtonDailymoods
+export default ButtonDeleteUser
