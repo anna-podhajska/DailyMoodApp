@@ -1,8 +1,15 @@
 ### Personal mini-project 
 
 Created during the 7th week of bootcamp.
+Play-ground for JavaScript, React, Express, Knex, React-Bootstrap.
 
-Play-ground for JavaScript, React, Express, Knex.
+
+### Install / Running
+- clone this repo: git clone https://github.com/anna-podhajska/dailyMoodApp
+- cd dailyMoodApp
+- npm install
+- npm run dev
+- visit the app at [http://localhost:3000](http://localhost:3000).
 
 ### As a user I want:
 
